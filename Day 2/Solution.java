@@ -22,7 +22,7 @@ class Solution{
         s[4].withdraw(50000.0);
 
         for(int i=0;i<5;i++){
-            System.out.println("Showing New Customer Details");
+            System.out.println("Showing New Customer Details.");
             s[i].display();
         }
     }
