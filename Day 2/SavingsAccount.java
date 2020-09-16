@@ -31,7 +31,8 @@ class SavingsAccount{
             balance-=val1;
         else
         {
-            System.out.println("Insufficient funds for Account Holder : "+name);   
+			System.out.println("Withdrawing not allowed for Account Holder : "+name);
+            System.out.println("Insufficient funds in the Account.");   
             System.out.println("-----------------------------------------------------");
         }     
     }
