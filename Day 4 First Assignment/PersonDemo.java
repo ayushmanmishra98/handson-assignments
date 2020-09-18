@@ -11,19 +11,19 @@ public class PersonDemo{
         Customer customer1=new Customer("Shreyasi","08 August 1998","Female",1248521282L,15,new Account(5555L,80000),new Address("Maharatra","Pune",56003L));
         
         System.out.println("Showing Manager Details");
-        Display(manager1);
+        display(manager1);
         
         System.out.println("Showing Admin Details");
-        Display(admin1);
+        display(admin1);
         
         System.out.println("Showing Programmer Details");
-        Display(programmer1);
+        display(programmer1);
         
         System.out.println("Showing Student Details");
-        Display(student1);
+        display(student1);
         
         System.out.println("Showing Customer Details");
-        Display(customer1);
+        display(customer1);
         
         System.out.println("Updating Manager Salary");
         testUpdate(manager1);
@@ -41,22 +41,22 @@ public class PersonDemo{
         testUpdate(customer1);
         
         System.out.println("Showing Manager Details after update");
-        Display(manager1); 
+        display(manager1); 
         
         System.out.println("Showing Admin Details after update");
-        Display(admin1);
+        display(admin1);
         
         System.out.println("Showing Programmer Details after update");
-        Display(programmer1);
+        display(programmer1);
         
         System.out.println("Showing Student Details after update");
-        Display(student1);
+        display(student1);
         
         System.out.println("Showing Customer Details after update");
-        Display(customer1);
+        display(customer1);
     }
 
-    public static void Display(Person people){
+    public static void display(Person people){
         people.showInformation();
     }
 
