@@ -1,13 +1,11 @@
 public class Student extends Person{
     private int rollno;
     private String grade;
-    private Address a;
 
-    public Student(String name,String dob,String gender,long phoneno,int rollno,String grade,Address a){
-        super(name,dob,gender,phoneno);
+    public Student(String name,String dob,String gender,long phoneno,int rollno,String grade,Address addr){
+        super(name,dob,gender,phoneno,addr);
         this.rollno=rollno;
         this.grade=grade;
-        this.a=a;
     }
 
     public void updateGrade(String grade){
@@ -28,9 +26,7 @@ public class Student extends Person{
         System.out.println("Roll Number : "+this.rollno);
         System.out.println("Grade : "+this.grade);
         System.out.println("----------------------Showing Address Details----------------");
-        System.out.println("State : "+a.getState());
-        System.out.println("City : "+a.getCity());
-        System.out.println("Pincode : "+a.getPincode());
+        addressDetails();
         System.out.println("----------------------------------------------------------------");
     }
     

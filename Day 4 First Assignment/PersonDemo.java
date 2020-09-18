@@ -1,114 +1,114 @@
 public class PersonDemo{
     public static void main(String args[]){
-        Manager m=new Manager("Ravish","20 January 1995","Male",4444455552L,1221,80000,"Level 5",new Address("Odisha","Bhubaneswar",751003L));
+        Manager manager1=new Manager("Ravish","20 January 1995","Male",4444455552L,1221,80000,"Level 5",new Address("Odisha","Bhubaneswar",751003L));
         
-        Admin a=new Admin("Harish","10 October 1997","Male",2484255552L,1225,50000,"Level 7",new Address("Odisha","Cuttack",751020L));
+        Admin admin1=new Admin("Harish","10 October 1997","Male",2484255552L,1225,50000,"Level 7",new Address("Odisha","Cuttack",751020L));
         
-        Programmer p=new Programmer("Anusmita","11 December 1998","Female",1234567890L,1235,40000,"Level 8",new Address("Odisha","Puri",751004L));
+        Programmer programmer1=new Programmer("Anusmita","11 December 1998","Female",1234567890L,"Java",1235,40000,"Level 8",new Address("Odisha","Puri",751004L));
         
-        Student s=new Student("Harish","05 February 2002","Male",9287654321L,10,"Fourth",new Address("Odisha","Bhadrak",751040L));
+        Student student1=new Student("Harish","05 February 2002","Male",9287654321L,10,"Fourth",new Address("Odisha","Bhadrak",751040L));
         
-        Customer c=new Customer("Shreyasi","08 August 1998","Female",1248521282L,15,new Account(5555L,80000),new Address("Maharatra","Pune",56003L));
+        Customer customer1=new Customer("Shreyasi","08 August 1998","Female",1248521282L,15,new Account(5555L,80000),new Address("Maharatra","Pune",56003L));
         
         System.out.println("Showing Manager Details");
-        Display(m);
+        Display(manager1);
         
         System.out.println("Showing Admin Details");
-        Display(a);
+        Display(admin1);
         
         System.out.println("Showing Programmer Details");
-        Display(p);
+        Display(programmer1);
         
         System.out.println("Showing Student Details");
-        Display(s);
+        Display(student1);
         
         System.out.println("Showing Customer Details");
-        Display(c);
+        Display(customer1);
         
         System.out.println("Updating Manager Salary");
-        testUpdate(m);
+        testUpdate(manager1);
         
         System.out.println("Updating Admin Salary");
-        testUpdate(a);
+        testUpdate(admin1);
         
         System.out.println("Updating Programmer Salary");
-        testUpdate(p);
+        testUpdate(programmer1);
         
         System.out.println("Updating Student Grade");
-        testUpdate(s);
+        testUpdate(student1);
         
         System.out.println("Updating Customer Balance");
-        testUpdate(c);
+        testUpdate(customer1);
         
         System.out.println("Showing Manager Details after update");
-        Display(m);
+        Display(manager1); 
         
         System.out.println("Showing Admin Details after update");
-        Display(a);
+        Display(admin1);
         
         System.out.println("Showing Programmer Details after update");
-        Display(p);
+        Display(programmer1);
         
         System.out.println("Showing Student Details after update");
-        Display(s);
+        Display(student1);
         
         System.out.println("Showing Customer Details after update");
-        Display(c);
+        Display(customer1);
     }
 
-    public static void Display(Person p){
-        p.showInformation();
+    public static void Display(Person people){
+        people.showInformation();
     }
 
-    public static void testUpdate(Person p){
+    public static void testUpdate(Person people){
         //Updating Salary Of Manager
-        if(p instanceof Manager){
+        if(people instanceof Manager){
             double extra=0;
-            Manager man=(Manager)p;
+            Manager man=(Manager)people;
             double presentSalary=man.getSalary();
             extra=presentSalary*10;
             extra/=100;
             presentSalary+=extra;
             System.out.println("Salary increased by 10% that is : "+extra);
-            man.setSalaryManager(presentSalary);
+            man.setSalary(presentSalary);
         }
 
         //Updating Salary Of Admin    
-        if(p instanceof Admin){
+        if(people instanceof Admin){
             double extra=0;
-            Admin man=(Admin)p;
+            Admin man=(Admin)people;
             double presentSalary=man.getSalary();
             extra=presentSalary*10;
             extra/=100;
             presentSalary+=extra;
             System.out.println("Salary increased by 10% that is : "+extra);
-            man.setSalaryAdmin(presentSalary);
+            man.setSalary(presentSalary);
         }
 
 
         //Updating Salary Of Programmer
-        if(p instanceof Programmer){
+        if(people instanceof Programmer){
             double extra=0;
-            Programmer man=(Programmer)p;
+            Programmer man=(Programmer)people;
             double presentSalary=man.getSalary();
             extra=presentSalary*10;
             extra/=100;
             presentSalary+=extra;
             System.out.println("Salary increased by 10% that is : "+extra);
-            man.setSalaryProgrammer(presentSalary);
+            man.setSalary(presentSalary);
         }
 
 
         //Updating Student Grade
-        if(p instanceof Student){
-            Student man=(Student)p;
+        if(people instanceof Student){
+            Student man=(Student)people;
             man.updateGrade("Fifth");
         }
 
 
         //Updating Customer Balance
-        if(p instanceof Customer){
-            Customer man=(Customer)p;
+        if(people instanceof Customer){
+            Customer man=(Customer)people;
             man.updateBalance(20000);
         }
 
