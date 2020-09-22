@@ -43,7 +43,7 @@ public class AccountServiceImpl implements AccountService{
 			throw new AccountNotFoundException("Source Account number "+from+" not found");
 		Account toAccount=dao.fetchAccountById(to);
 		if(toAccount==null)
-			throw new AccountNotFoundException("Destination Account number "+from+" not found");
+			throw new AccountNotFoundException("Destination Account number "+to+" not found");
 		double presentAmountSource=fromAccount.getBalance();
 		if(presentAmountSource<amount)
 			throw new InsufficientBalanceException("Balance not sufficient in source account to transfer.Present balance is "+presentAmountSource);
