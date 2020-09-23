@@ -1,6 +1,7 @@
 package com.demo.model.dao;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import com.demo.model.bean.User;
@@ -28,24 +29,40 @@ public class CollectionBackedUserDao implements UserDao {
 	@Override
 	public User fetchId(int id) {
 		User found=null;
-		User[] allUser=getAllUser();
+		/*User[] allUser=getAllUser();
 		for(int i=0;i<allUser.length;i++) {
 			if(allUser[i].getUserId()==id) {
 				found=allUser[i];
 				break;
 			}
+		}*/
+		Iterator<User> it1=list1.iterator();
+		while(it1.hasNext()) {
+		User u=it1.next();
+		if(u.getUserId()==id) {
+			found=u;
+			break;
+		}
 		}
 		return found;
 	}
 
 	@Override
 	public User update(int id, User user) {
-		User[] allUser=getAllUser();
+		/*User[] allUser=getAllUser();
 		for(int i=0;i<allUser.length;i++) {
 			if(allUser[i].getUserId()==id) {
 				allUser[i]=user;
 				break;
 			}
+		}*/
+		Iterator<User> it1=list1.iterator();
+		while(it1.hasNext()) {
+		User u=it1.next();
+		if(u.getUserId()==id) {
+			u=user;
+			break;
+		}
 		}
 		return user;
 	}
