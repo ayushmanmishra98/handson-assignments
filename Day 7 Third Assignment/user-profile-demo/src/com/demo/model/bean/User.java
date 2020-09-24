@@ -8,11 +8,15 @@ public class User implements Serializable{
 	private String password;
 	private String phoneNo;
 	
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	private static int userCounter=1;
 
 	public User() {
 		super();
-		this.userId=userCounter++;
+		//this.userId=userCounter++;
 	}
 
 	public String getName() {
