@@ -20,41 +20,39 @@ public class FileBackedDao implements UserDao {
 	//private static List<User> list1=new ArrayList<User>();
 	
 	
-	private static List<User> list1=desrialize();
+	private static List<User> list1=desril()();
 	
-	public static List<User> desrialize() {
-		// TODO Auto-generated method stub
+	private static List<User> desril() {
 		try {
-			FileInputStream fis=new FileInputStream("fildedb1.ser");
+			FileInputStream fis=new FileInputStream("UserDb.txt");
 			ObjectInputStream ois=new ObjectInputStream(fis);
 			List<User> list=(List<User>)ois.readObject();
 			ois.close();
 			fis.close();
 			return list;
 		}catch(FileNotFoundException e) {
-			serialize(null);
-			System.out.println("File not present.");
+			serializable(null);
 		}
 		catch(IOException e) {
-			System.out.println("Error");
-		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Error");
 		}
 		return null;
 	}
 	
 	
-	public static void serialize(User user) {
+	private static void serializable(List<User> l) {
 		try {
-		FileOutputStream fos=new FileOutputStream("fildedb1.ser");//Any extension
-		ObjectOutputStream oos=new ObjectOutputStream(fos);
-		if(user!=null) {
-		oos.writeObject(user);
-		fos.flush();
-		oos.close();
-		fos.close();
-		}
-		}catch(IOException e){
+			FileOutputStream fos=new FileOutputStream("UserDb.txt");
+			ObjectOutputStream oos=new ObjectOutputStream(fos);
+			if(l!=null) {
+			oos.writeObject(l);
+			}
+			fos.flush();
+			oos.close();
+			fos.close();
+		}catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -62,7 +60,7 @@ public class FileBackedDao implements UserDao {
 	@Override
 	public User storeUser(User user) {
 		list1.add(user);
-		serialize(user);
+		serializable(user);
 		return user;
 	}
 
