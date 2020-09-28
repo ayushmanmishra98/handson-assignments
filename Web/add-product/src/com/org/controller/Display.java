@@ -18,12 +18,15 @@ import javax.servlet.http.HttpSession;
 public class Display extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter pw=response.getWriter();
 		HttpSession session=request.getSession();
-		ArrayList<String> product=(ArrayList<String>)session.getAttribute("key1");
-		for(String temp:product) {
-			pw.print(temp);
+		pw.print("Product List:<br/>");
+		ArrayList<String> a1=(ArrayList<String>)session.getAttribute("key2");
+		for(String name:a1) {
+			pw.println(name);
 		}
 	}
 
