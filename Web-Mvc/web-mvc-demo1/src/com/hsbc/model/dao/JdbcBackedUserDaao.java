@@ -58,11 +58,14 @@ public class JdbcBackedUserDaao implements UserDao{
 			seq = rs.getInt(1);
 		} 
 		PreparedStatement insertStatement=connection.prepareStatement("insert into user_table values(?,?,?,?)");
-		insertStatement.setInt(1,seq);//In first question mark insert userId
+		insertStatement.setInt(1,seq);
 		insertStatement.setString(2,user.getName());
 		insertStatement.setString(3,user.getPassword());
 		insertStatement.setLong(4,user.getPhone());
 		int resultSet=insertStatement.executeUpdate();
+		sequenceStatement.close();
+		insertStatement.close();
+		connection.close();
 		}catch(ClassNotFoundException e) {
 			e.printStackTrace();
 		}catch(SQLException e) {
@@ -87,6 +90,9 @@ public class JdbcBackedUserDaao implements UserDao{
 				user.setPhone(selectQuery.getLong("phone"));
 				all.add(user);
 			}
+			selectStatement.close();
+			selectQuery.close();
+			connection.close();
 		}catch(ClassNotFoundException e) {
 				e.printStackTrace();
 			}catch(SQLException e) {
