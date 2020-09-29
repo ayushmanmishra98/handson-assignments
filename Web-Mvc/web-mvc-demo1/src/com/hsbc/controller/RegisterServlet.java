@@ -34,7 +34,7 @@ public class RegisterServlet extends HttpServlet {
 		user.setPassword(password);
 		user.setPhone(phoneNumber);
 		User registered=service.createUser(user);
-		RequestDispatcher rd = request.getRequestDispatcher("updatesuccess.html");
+		RequestDispatcher rd = request.getRequestDispatcher("registersuccess.html");
 		rd.forward(request, response);
 	}
 
