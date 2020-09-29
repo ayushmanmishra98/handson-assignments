@@ -9,6 +9,6 @@
 <body>
 <h1>User Not Found</h1>
 	<h3 style = "color:red">${err}</h3>
-	<jsp:include page="searchuser.html"></jsp:include>
+	<jsp:include page="login.html"></jsp:include>
 </body>
 </html>
