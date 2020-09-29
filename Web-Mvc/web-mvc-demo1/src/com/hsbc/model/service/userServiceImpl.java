@@ -20,7 +20,7 @@ public class userServiceImpl implements UserService {
 	public User login(int userId, String password) throws AuthenticationException {
 		User user=userDao.authenticate(userId, password);
 		if(user==null) {
-			throw new AuthenticationException("Sorry something went wrong");
+			throw new AuthenticationException("Sorry something went wrong");//This error we will get when we lose connectivity to the server.
 		}
 		return user;
 	}

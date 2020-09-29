@@ -36,7 +36,7 @@ public class JdbcBackedUserDaao implements UserDao{
 			preparedStatement.close();
 			connection.close();
 			if(user==null) {
-				throw new AuthenticationException("Sorry Username or Password is incorrect.");
+				throw new AuthenticationException("Sorry Username or Password is incorrect.");//This throws error directly.
 			}
 		}catch(SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
@@ -58,7 +58,7 @@ public class JdbcBackedUserDaao implements UserDao{
 			seq = rs.getInt(1);
 		} 
 		PreparedStatement insertStatement=connection.prepareStatement("insert into user_table values(?,?,?,?)");
-		insertStatement.setInt(1,seq);
+		insertStatement.setInt(1,seq);//In first question mark insert userId
 		insertStatement.setString(2,user.getName());
 		insertStatement.setString(3,user.getPassword());
 		insertStatement.setLong(4,user.getPhone());
@@ -109,7 +109,7 @@ public class JdbcBackedUserDaao implements UserDao{
 			PreparedStatement updateStatement=connection.prepareStatement("update user_table set phone=?,password=? where user_id=?");
 			String phone=Long.toString(user.getPhone());
 			updateStatement.setString(1,phone);
-			updateStatement.setPhone(2,user.getPhone());
+			updateStatement.setString(2,user.getPassword());
 			updateStatement.setInt(3,userId);
 			int resultSet=updateStatement.executeUpdate();
 			updateStatement.close();

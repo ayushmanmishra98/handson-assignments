@@ -9,8 +9,9 @@
 <body>
 	<h3>Welcome to Login Success Page</h3>
 	<p>Id: ${userKey.userId}, Name : ${userKey.name}, Phone: ${userKey.phone}</p>
-	<a href=updatePhone.html>Update Phone Number</a>
-	<a href=updatePassword.html>Update Password</a>
-	<a href=searchuser.html>Search a user.</a>
+	<a href=updatePhone.html>Update Phone Number</a><br/>
+	<a href=updatePassword.html>Update Password</a><br/>
+	<a href=searchuser.html>Search a User</a><br/>
+	<a href=Logout>Logout</a>
 </body>
 </html>
