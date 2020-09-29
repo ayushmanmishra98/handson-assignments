@@ -100,10 +100,11 @@ public class JdbcBackedUserDaao implements UserDao{
 		// TODO Auto-generated method stub
 		try {
 			Connection connection=DBUtility.getConnection();
-			PreparedStatement updateStatement=connection.prepareStatement("update user_table set phone=? where user_id=?");
+			PreparedStatement updateStatement=connection.prepareStatement("update user_table set phone=?,password=? where user_id=?");
 			String phone=Long.toString(user.getPhone());
 			updateStatement.setString(1,phone);
-			updateStatement.setInt(2,userId);
+			updateStatement.setPhone(1,user.getPhone());
+			updateStatement.setInt(3,userId);
 			int resultSet=updateStatement.executeUpdate();
 			updateStatement.close();
 			connection.close();
