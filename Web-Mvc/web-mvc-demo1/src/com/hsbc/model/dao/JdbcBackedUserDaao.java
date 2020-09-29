@@ -103,7 +103,7 @@ public class JdbcBackedUserDaao implements UserDao{
 			PreparedStatement updateStatement=connection.prepareStatement("update user_table set phone=?,password=? where user_id=?");
 			String phone=Long.toString(user.getPhone());
 			updateStatement.setString(1,phone);
-			updateStatement.setPhone(1,user.getPhone());
+			updateStatement.setPhone(2,user.getPhone());
 			updateStatement.setInt(3,userId);
 			int resultSet=updateStatement.executeUpdate();
 			updateStatement.close();
