@@ -12,4 +12,5 @@ public User createUser(User user);
 public User updatePhone(int userId,long phone);
 public User updatePassword(int userId,String password);
 public User getUser(int userId) throws UserNotFoundException;
+public List<User> fetchAllUsers();
 }

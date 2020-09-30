@@ -81,5 +81,11 @@ public class userServiceImpl implements UserService {
 	}
 
 
+	@Override
+	public List<User> fetchAllUsers() {
+		return userDao.fetchAllUsers();
+	}
+
+
 
 }

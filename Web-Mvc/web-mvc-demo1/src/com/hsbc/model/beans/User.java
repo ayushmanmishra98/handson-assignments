@@ -29,6 +29,10 @@ public long getPhone() {
 public void setPhone(long phone) {
 	this.phone = phone;
 }
+@Override
+public String toString() {
+	return "User [userId=" + userId + ", name=" + name + ", password=" + password + ", phone=" + phone + "]";
+}
 
 
 
