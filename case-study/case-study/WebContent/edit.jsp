@@ -6,8 +6,8 @@
 </head>
 <body>
 <h1>Welcome.To your edit Profile Page.Please click on a click to edit.</h1>
-	<a href=updatePhone.html>UPDATE PHONE NUMBER.</a><br/>
-	<a href=updatePassword.html>UPDATE PASSWORD.</a><br/>
-	<a href=updateDob.html>UPDATE DOB.</a><br/>
+	<a href=updatePhone.jsp>UPDATE PHONE NUMBER.</a><br/>
+	<a href=updatePassword.jsp>UPDATE PASSWORD.</a><br/>
+	<a href=updateDob.jsp>UPDATE DOB.</a><br/>
 </body>
 </html>
