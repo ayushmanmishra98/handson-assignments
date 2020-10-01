@@ -15,7 +15,7 @@ public Profile updatePassword(int id,String password);
 public Profile updateDob(int id,String dob);
 public List<Profile> getAll();
 public Contact addContact(int id,Contact contact) throws NotFound;
-public Contact getContact(int id, int contactId);
+public Contact getContact(int id, int contactId) throws NotFound;
 public int deleteContact(int id, int convertId) throws NotFound;
 public int deleteProfile(int id) throws NotFound;
 public List<Contact> getAllContacts(int id);

@@ -101,8 +101,12 @@ public class ProfileServiceImpl implements ProfileService{
 	}
 
 	@Override
-	public Contact getContact(int id, int contactId) {
-		return dao.get(id,contactId);
+	public Contact getContact(int id, int contactId) throws NotFound{
+		Contact found=dao.get(id,contactId);
+		if(found==null) {
+			throw new NotFound("Sorry contact details does not exist.");
+		}
+		return found;
 	}
 
 	@Override
